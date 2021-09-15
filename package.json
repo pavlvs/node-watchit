@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/pavlvs/node-watchit/issues"
   },
-  "homepage": "https://github.com/pavlvs/node-watchit#readme"
+  "homepage": "https://github.com/pavlvs/node-watchit#readme",
+  "dependencies": {
+    "chokidar": "^3.5.2"
+  }
 }
