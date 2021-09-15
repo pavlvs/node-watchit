@@ -2,16 +2,28 @@
 
 const debounce = require('lodash.debounce')
 const chokidar = require('chokidar')
+const program = require('caporal')
 
-const start = debounce(() => {
-    console.log('STARTING USER PROGRAM')
-}, 100)
+program
+    .version('1.0.0')
 
-chokidar
-    .watch('.')
-    .on('add', start)
-    .on('change', () => console.log('FILE CHANGED'))
-    .on('unlink', () => console.log('FILE UNLINKED'))
+    .argument('[filename]', 'Name of a file to execute')
+
+    .action((args) => {
+        console.log(args)
+    })
+
+program.parse(process.argv)
+
+// const start = debounce(() => {
+//     console.log('STARTING USER PROGRAM')
+// }, 100)
+
+// chokidar
+//     .watch('.')
+//     .on('add', start)
+//     .on('change', () => console.log('FILE CHANGED'))
+//     .on('unlink', () => console.log('FILE UNLINKED'))
 
 // ta⇥ ternary statement
 // fl⇥ for loop (ES6)
